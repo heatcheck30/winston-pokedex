@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>EDIT POKEMON STAT</h1>
+    <form action="/pokemon/<%= data.id %>?_method=PUT" method="POST">
+        <input type="text" name="name" value="<%= data.name%>" placeholder="name">
+        <input type="text" name="img" value="<%= data.img%>" placeholder="image link">
+        <input type="text" name="type" value="<%= data.type%>" placeholder="type"> <br>
+        <input type="text" name="hp" value="<%= data.stats.hp%>" placeholder="health point">
+        <input type="text" name="speed" value="<%= data.stats.speed%>" placeholder="speed stat">
+        <input type="text" name="defense" value="<%= data.stats.defense%>" placeholder="defense stat">
+        <input type="text" name="attack" value="<%= data.stats.attack%>" placeholder="attack stat"> <br>
+        <input type="submit" value="UPDATE STAT">
+    </form>
+</body>
+</html>

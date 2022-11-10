@@ -1,0 +1,35 @@
+
+
+#each-pokemon {
+    float: left;
+    width: 33.33%;
+    height: 500px;
+}
+
+#each-pokemon img {
+    width: 300px;
+    height: 300px;
+}
+
+#each-pokemon img:hover {
+    opacity: .6;
+}
+
+#new-poke-bt, #edit-bt {
+    text-decoration: none;
+    border: 1px solid lightskyblue;
+    padding: 4px 4px;
+    font-size: large;
+}
+
+#new-poke-bt:hover, #edit-bt:hover {
+    text-decoration: none;
+    background-color: lightskyblue;
+    padding: 4px 4px;
+    font-size: large;
+}
+
+/* #each-pokemon:hover {
+    background-color: rgb(49, 102, 149);
+} */
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+<style>
+    #type-div {
+        border: 3px solid red;
+        border-radius: 10%;
+        background-color: rgb(237, 106, 106);
+    }
+    
+    #stat-div {
+        border: 3px solid blue;
+        border-radius: 10%;
+        background-color: rgb(142, 142, 237);
+    }
+
+
+</style>
+
+<body>
+    <div style="text-align: center; margin: 0px 100px;">
+        <h2>
+            <%= data.name%>
+        </h2>
+        <img style="margin-bottom: 20px;" src="<%= data.img%>">
+        <div id="type-div">
+            <h4> Type </h4>
+            <hr>
+            <ul style="list-style-type: none; padding-inline-start: 0px;">
+                <% for(let i=0; i < data.type.length; i++) { %>
+                    <li>
+                        <%= data.type[i]%>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+        <br>
+        <div id="stat-div">
+            <h4> Stats </h4>
+            <hr>
+            <ul style="list-style-type: none; padding-inline-start: 0px;">
+                <li>HP: <%= data.stats.hp%></li>
+                <li>Speed: <%= data.stats.speed%></li>
+                <li>Attack: <%= data.stats.attack%></li>
+                <li>Defense: <%= data.stats.defense%></li>
+            </ul>
+        </div>
+        <a href="/pokemon">Back</a>
+
+    </div>
+</body>
+
+</html>
