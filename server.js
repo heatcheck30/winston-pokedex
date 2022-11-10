@@ -38,6 +38,7 @@ app.put("/pokemon/:id", (req, res) => {
     foundPoke = pokemon[id];
     console.log(foundPoke["name"]);
     console.log(req.body.type);
+    //really unique way to solve the formatting of req.body so that the updated pokemon will be viewable in the show
     foundPoke["name"] = req.body.name;
     foundPoke["img"] = req.body.img;
     foundPoke["type"] = req.body.type.split(",");
@@ -52,7 +53,19 @@ app.put("/pokemon/:id", (req, res) => {
 
 //create
 app.post("/pokemon", (req, res) => {
-    pokemon.push(req.body);
+    //this is not working completely, the data is post but you have to format as well to be able to see the show page, you can do the above but this is how i solved it
+    const newPokemon = {
+        name: req.body.name,
+        type: req.body.type.split(','),
+        img: req.body.img,
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense
+        }
+    };
+    pokemon.push(newPokemon);
+    //pokemon.push(req.body);
     console.log(req.body);
     res.redirect("/pokemon");
 })
